@@ -28,8 +28,8 @@ if (result.valid) {
 # About Me
 Visit my youtube : [https://www.youtube.com/@block7code](https://www.youtube.com/@block7code)
 
-Follow my Github : [![GitHub followers]](https://github.com/block7code?tab=followers)
+Follow my Github : [GitHub followers](https://github.com/block7code?tab=followers)
 
 # Clone From
-From Github : [![yusriltakeuchi]](https://github.com/yusriltakeuchi)
+From Github : [yusriltakeuchi](https://github.com/yusriltakeuchi)
 
