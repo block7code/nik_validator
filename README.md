@@ -1,137 +1,35 @@
-# costum_widgets
 
-A set of costum_widgets flutter widgets to help you save time building your layouts.
+# nik_validator
 
-Add the plugin:
+NIK Validator is a package to converting Indonesian Identity Card Number into useful informations.
+You just call the function .parse and input NIK number in the parameter, then you will get the informations, without internet connection (offline)
 
-# Basic Usage (CustomCheck)
+<img src="https://i.ibb.co/B4716Rt/IMG-20210220-184403.jpg" height="480px">
 
+# Example Code:
 ```dart
-   CustomCheck(
-      value: true,
-      activeColor: Colors.green,
-      type: CheckType.circle,
-      size: 24,  
-      onChanged: (value){
-        
-      },
-    )
-   ```
-   * custom builder
-   
-   ```dart
-   CustomCheck(
-      value: value,
-      activeColor: Colors.green,
-      type: CheckType.circle,
-      size: 24,
-      builder: (ctx, size) {
-        return Icon(
-          Icons.star,
-          color: Colors.white,
-          size: size,
-        );
-      },
-      onChanged: (value) {
-        
-      },
-    )
-   ```
-   
-# Basic Usage (CustomSwitch)
+NIKModel result = await NIKValidator.instance.parse(nik: nik);
+/// When nik is valid
+if (result.valid) {
+  print("NIK: ${result.nik}");
+  print("UNIQUE CODE: ${result.uniqueCode}");
+  print("GENDER: ${result.gender}");
+  print("BORNDATE: ${result.bornDate}");
+  print("AGE: ${result.age}");
+  print("NEXT BIRTHDAY: ${result.nextBirthday}");
+  print("ZODIAC: ${result.zodiac}");
+  print("PROVINCE: ${result.province}");
+  print("CITY: ${result.city}");
+  print("SUBDISTRICT: ${result.subdistrict}");
+  print("POSTAL CODE: ${result.postalCode}");
+}
+```
 
-```dart
-  CustomSwitch(
-      value: value,
-      activeColor: Colors.green, 
-      pointColor: Colors.white, 
-      onChanged: (value){
-        
-      },
-    )
-   ```
-   
-# Basic Usage (Txt)
+# About Me
+Visit my youtube : [https://www.youtube.com/@block7code](https://www.youtube.com/@block7code)
 
-```dart
-  Txt(
-    'Click here',
-    textSize: 28,
-    textAlign: TextAlign.center,
-    rich: Rich(
-        key: 'here',
-        onRichTap: (value) {
-          print('onRichTap: ${value}'); 
-        },
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            decoration: TextDecoration.underline
-            )
-        ),
-  )
-   ```
-   
-   ```dart
-   Txt(
-       'click_message',
-        textSize: 28,
-        textAlign: TextAlign.center,
-        builderText: (value) => 'Click here',
-   ),
-   ```
-   
-# Basic Usage (Button)
-   * DefaultButton 
-   
-   ```dart
-   DefaultButton(
-        value: 'Click',
-        activeColor: Colors.green,
-        textColor: Colors.white,
-        onPressed: () {},
-   ) 
-   ``` 
-   * CustomProgressButton 
-   
-  ```dart
-   CustomProgressButton(
-        isLoading: isLoading,
-        border: 16.0,
-        ignorePlatform: true,
-        onPressed: () async {
-          setState(() => isLoading = !isLoading);
-          await Future.delayed(Duration(seconds: 2));
-          setState(() => isLoading = !isLoading);
-        },
-        value: 'Click',
-        activeColor: Colors.green,
-   )
-   ```
-   
-## Preview (CustomCheck)
+Follow my Github : [![GitHub followers](https://github.com/block7code?tab=followers)
 
-<img src="/screenshots/image_ch0.png" height="300"> 
-<img src="/screenshots/image_ch1.png" height="300">  
-<img src="/screenshots/image_ch2.png" height="300"> 
-<img src="/screenshots/image_ch3.png" height="300"> 
+# Clone From
+Clone From Github : [![yusriltakeuchi](https://github.com/yusriltakeuchi)
 
-## Preview (CustomSwitch)
-
-<img src="/screenshots/image_sw0.png" height="300"> 
-<img src="/screenshots/image_sw1.png" height="300">   
-
-## Example
-
-<img src="/screenshots/screen1.png" width="280" height="500">  |
-<img src="/screenshots/screen2.png" width="280" height="500">  
-
-## Widgets currently available
-
-* Switch
-* Check 
-* Text 
-* Button 
-
-If you have any features you want to see in this app, feel free to make a suggestion. 🎉
-
-## Don't forget to give it a ⭐ this motivates me to share more open source.
